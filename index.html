@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albergue de Mascotas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Albergue de Mascotas</h1>
+    
+    <div id="loginContainer">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario" required aria-label="Usuario">
+        <input type="password" id="password" placeholder="Contraseña" required aria-label="Contraseña">
+        <button id="loginButton">Iniciar Sesión</button>
+        <div id="loginMessage" class="message"></div>
+        <p style="text-align: center;">¿No tienes cuenta? <span id="showRegister" style="color: #4a90e2; cursor: pointer;">Regístrate aquí</span></p>
+    </div>
+
+    <div id="registerContainer">
+        <h2>Registrarse</h2>
+        <input type="text" id="newUsername" placeholder="Usuario" required aria-label="Nuevo Usuario">
+        <input type="password" id="newPassword" placeholder="Contraseña" required aria-label="Nueva Contraseña">
+        <button id="registerButton">Registrarse</button>
+        <div id="registerMessage" class="message"></div>
+        <p style="text-align: center;">¿Ya tienes cuenta? <span id="showLogin" style="color: #4a90e2; cursor: pointer;">Inicia sesión aquí</span></p>
+    </div>
+
+    <div id="mainContainer">
+        <h2>Opciones</h2>
+        <input type="text" id="searchInput" placeholder="Buscar mascota" onkeyup="buscarMascotas()" aria-label="Buscar mascota">
+        <div class="option" id="createPost">Crear Publicación de Mascota</div>
+        <div class="option" id="viewPets">Ver Publicaciones de Mascotas</div>
+    </div>
+
+    <div id="postContainer" style="display: none;">
+        <h2>Crear Publicación</h2>
+        <input type="text" id="petName" placeholder="Nombre de la Mascota" required aria-label="Nombre de la Mascota">
+        <input type="file" id="petImage" accept="image/*" required aria-label="Imagen de la Mascota">
+        <textarea id="postContent" placeholder="Descripción..." required aria-label="Descripción"></textarea>
+        <button id="submitPost">Publicar</button>
+        <div id="postMessage" style="color: green; text-align: center;"></div>
+    </div>
+
+    <div id="successContainer" style="display: none;">
+        <h2>Publicación Exitosa</h2>
+        <p>¡Tu publicación ha sido creada con éxito!</p>
+        <button id="returnButton">Regresar</button>
+    </div>
+
+    <div id="feedContainer">
+        <h2>Publicaciones de Mascotas</h2>
+        <div id="feed"></div>
+        <button id="backToMainButton">Regresar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
